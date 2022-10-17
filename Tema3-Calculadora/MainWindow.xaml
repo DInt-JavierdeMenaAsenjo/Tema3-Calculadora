@@ -7,7 +7,14 @@
         mc:Ignorable="d"
         Icon="assets/calc.ico"
         Title="Calculadora" MinHeight="400" MinWidth="500" Width="600" Height="600">
-    <Grid Margin="5">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+    </Window.Resources>
+    
+        <Grid Margin="5">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="2*"></RowDefinition>
@@ -32,55 +39,11 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0" Grid.Row="0">
-                <UniformGrid>
-                    <Button Grid.Column="0" Grid.Row="0" Margin="5" Tag="1" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>1</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="1" Grid.Row="0" Margin="5" Tag="2" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>2</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="2" Grid.Row="0" Margin="5" Tag="3" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>3</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="0" Grid.Row="1" Margin="5" Tag="4" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>4</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="1" Grid.Row="1" Margin="5" Tag="5" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>5</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="2" Grid.Row="1" Margin="5" Tag="6" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>6</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="0" Grid.Row="2" Margin="5" Tag="7" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>7</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="1" Grid.Row="2" Margin="5" Tag="8" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>8</TextBlock>
-                        </Viewbox>
-                    </Button>
-                    <Button Grid.Column="2" Grid.Row="2" Margin="5" Tag="9" Click="addNumero">
-                        <Viewbox>
-                            <TextBlock>9</TextBlock>
-                        </Viewbox>
-                    </Button>
+                <UniformGrid Name="botones_UniformGrid">
+                    
                 </UniformGrid>
             </Grid>
-            <Button Grid.Column="0" Grid.Row="1" Margin="5" Tag="0" FontSize="30" Click="addNumero">0</Button>
+            <Button Grid.Column="0" Grid.Row="1" Tag="0" FontSize="30" Click="addNumero">0</Button>
             
         </Grid>
     </Grid>
